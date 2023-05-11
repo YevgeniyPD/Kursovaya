@@ -1,0 +1,48 @@
+{% extends 'suroviy/base.html'  %}
+{% block content %}
+{% csrf_token %}
+{% for r in Baza %}
+    <div class="requests">
+        <h2><strong>Номер: </strong>{{ r.cad_nomer }}</h2>
+        <h5>Статус:  {{ r.status }}</h5>
+        <p>{{r.time_create|date:"d-m-Y H:i:s"}}</p>
+    </div>
+{% endfor %}
+
+
+
+
+
+
+
+
+<!--                {% for r in Baza %}-->
+<!--                    <div>-->
+<!--                        <ol>-->
+<!--                            <li><strong>Дата создания запроса: </strong>{{r.time_create|date:"d-m-Y H:i:s"}}</li>-->
+<!--                            <li> <strong>Имя: </strong>{{ r.name }}</li>-->
+<!--                            <li><strong>Фамилия: </strong>{{ r.lastname }}</li>-->
+<!--                            <li><strong>Отчество: </strong>{{ r.surname }}</li>-->
+<!--                            <li><strong>Гражданство: </strong>{{ r.citizenship }}</li>-->
+<!--                            <li><strong>Место рождения: </strong>{{ r.pob }}</li>-->
+<!--                            <li><strong>Дата рождения: </strong>{{ r.dob }}</li>-->
+<!--                            <li><strong>Вид документа: </strong>{{ r.vidDocument }}</li>-->
+<!--                            <li><strong>Серия: </strong>{{ r.seria }}</li>-->
+<!--                            <li><strong>Номер: </strong>{{ r.nomer }}</li>-->
+<!--                            <li><strong>Орган: </strong>{{ r.organ }}</li>-->
+<!--                            <li><strong>Снилс: </strong>{{ r.snils }}</li>-->
+<!--                            <li><strong>Номер телефона: </strong>{{ r.phone }}</li>-->
+<!--                            <li><strong>Емайл: </strong>{{ r.email }}</li>-->
+<!--                            <li><strong>Вид услуги: </strong>{{ r.req }}</li>-->
+<!--                            <li><strong>Вид обьекта: </strong>{{ r.vidobject }}</li>-->
+<!--                            <li><strong>Адресс: </strong>{{ r.adres }}</li>-->
+<!--                            <li><strong>Кадастровый номер: </strong>{{ r.cad_nomer }}</li>-->
+<!--                            <li><strong>Примечание: </strong>{{ r.prim }}</li>-->
+<!--                            <li><strong>Документы: </strong></li>-->
+<!--                        </ol>-->
+<!--                        {% for i in Baza %}-->
+<!--                            <img src="{{ i.documents.url }}">-->
+<!--                        {% endfor %}-->
+<!--                    </div>-->
+<!--                {% endfor %}-->
+{% endblock %}

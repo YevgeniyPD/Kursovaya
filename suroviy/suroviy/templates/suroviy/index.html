@@ -1,0 +1,169 @@
+{% extends 'suroviy/base.html'  %}
+{% block content %}
+<form action="{% url 'homepage' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-block">
+        <h4>Сведения о правообладателе</h4>
+
+        <div class="form-group"><label for="{{ form.name.id_for_label }}"> {{form.name.label}}: </label>{{ form.name }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.lastname.id_for_label }}"> {{form.lastname.label}}: </label>{{ form.lastname }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.surname.id_for_label }}"> {{form.surname.label}}: </label>{{ form.surname }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.citizenship.id_for_label }}"> {{form.citizenship.label}}: </label>{{ form.citizenship }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.pob.id_for_label }}"> {{form.pob.label}}: </label>{{ form.pob }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.dob.id_for_label }}"> {{form.dob.label}}: </label>{{ form.dob }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+    </div>
+    <div class="form-block">
+        <h4>Документ, удостоверяющий личность правообладателя</h4>
+
+        <div class="form-group"><label for="{{ form.vidDocument.id_for_label }}"> {{form.vidDocument.label}}: </label>{{ form.vidDocument }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.seria.id_for_label }}"> {{form.seria.label}}: </label>{{ form.seria }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.nomer.id_for_label }}"> {{form.nomer.label}}: </label>{{ form.nomer }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.organ.id_for_label }}"> {{form.organ.label}}: </label>{{ form.organ }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+    </div>
+
+    <div class="form-block">
+        <h4>Дополнительные сведения о правообладателе</h4>
+
+        <div class="form-group"><label for="{{ form.snils.id_for_label }}"> {{form.snils.label}}: </label>{{ form.snils }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.phone.id_for_label }}"> {{form.phone.label}}: </label>{{ form.phone }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.email.id_for_label }}"> {{form.email.label}}: </label>{{ form.email }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.sogl.id_for_label }}"> {{form.sogl.label}}: </label>{{ form.sogl }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.sogl1.id_for_label }}"> {{form.sogl1.label}}: </label>{{ form.sogl1 }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+    </div>
+
+    <div class="form-block">
+        <h4>Вид услуги</h4>
+
+        <div class="form-group"><label for="{{ form.req.id_for_label }}"> {{form.req.label}}: </label>{{ form.req }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+    </div>
+
+    <div class="form-block">
+        <h4>Описание обьекта</h4>
+
+        <div class="form-group"><label for="{{ form.vidobject.id_for_label }}"> {{form.vidobject.label}}: </label>{{ form.vidobject }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.adres.id_for_label }}"> {{form.adres.label}}: </label>{{ form.adres }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+        <div class="form-group"><label for="{{ form.cad_nomer.id_for_label }}"> {{form.cad_nomer.label}}: </label>{{ form.cad_nomer }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+    </div>
+    <div class="form-block">
+        <h4>Документы</h4>
+        <p>Список необходимых документов: </p>
+        <ul>
+            <li>Документы, удостоверяющие личности заявителей(оригиналы для предьявления при личном сообщении)</li>
+            <li>Договор купли-продажи (если договор совершен в простой письменной форме - оригинал не менее 2-х экземпляров; если договор нотариально удостоверен - не менее 2-х экземпляров, один из которых оригинал)</li>
+            <li>Правоустанавливающий документ на обьект недвижимости (оригинал)</li>
+            <li>Подпись</li>
+            <li>По собственной инициативе - документы об уплате государственной пошлины (оригиналы и копии) в размере для физических лиц - 2 000 рублей, для юридических лиц - 22 000 рублей</li>
+        </ul>
+        <div class=""><label for="{{ form.documents.id_for_label }}"> {{form.documents.label}}: </label>{{ form.documents }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+        <div class="form-group form-area"><label for="{{ form.prim.id_for_label }}"> {{form.prim.label}}: </label>{{ form.prim }}</div>
+        <div class="form-error">{{ form.title.errors }}</div>
+
+    </div>
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    <div class="btndiv" > <button class="btn" type="submit">Отправить</button></div>
+</form>
+{% endblock %}
+
+
+<!--        <div class="form-block">-->
+<!--        <h4>Сведения о правообладателе</h4>-->
+<!--        {% for f in form.f1 %}-->
+<!--        <div class="form-group"><label for="{{ f.id_for_label }}"> {{f.label}}: </label>{{ f }}</div>-->
+<!--        <div class="form-error">{{ form.title.errors }}</div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--    <div class="form-block">-->
+<!--        {% for f in form.fd %}-->
+<!--        <div class="form-sel" ><label for="{{ f.id_for_label }}"> {{f.label}}: </label><div class="form-dd" >{{ f }}</div></div>-->
+<!--        <div class="form-error">{{ form.title.errors }}</div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--    <div class="form-block">-->
+<!--        <h4>Документ, удостоверяющий  личность правообладателя</h4>-->
+<!--        {% for f in form.f2 %}-->
+<!--        <div class="form-group"><label for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</div>-->
+<!--        <div class="form-error">{{ form.title.errors }}</div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--    <div class="form-block">-->
+<!--        <h4>Дополнительные сведения о правообладателе</h4>-->
+<!--        {% for f in form.f3 %}-->
+<!--        <div class="form-group"><label for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</div>-->
+<!--        <div class="form-error">{{ form.title.errors }}</div>-->
+<!--        {% endfor %}-->
+<!--        {% for f in form.fch %}-->
+<!--        <div class="">{{ f }}<label for="{{ f.id_for_label }}">{{f.label}}: </label></div>-->
+<!--        <div class="form-error">{{ form.title.errors }}</div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--    <div class="form-block">-->
+<!--        <h4>Вид услуги</h4>-->
+<!--        {% for f in form.f4 %}-->
+<!--        <div class="form-group"><label for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</div>-->
+<!--        <div class="form-error">{{ form.title.errors }}</div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--    <div class="form-block">-->
+<!--        <h4>Описание обьекта</h4>-->
+<!--        {% for f in form.f5 %}-->
+<!--        <div class="form-group"><label for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</div>-->
+<!--        <div class="form-error">{{ form.title.errors }}</div>-->
+<!--        {% endfor %}-->
+<!--    </div>-->
+<!--    <div class="form-block">-->
+<!--        <h4>Документы</h4>-->
+<!--        <p>Список необходимых документов: </p>-->
+<!--        <ul>-->
+<!--            <li>Документы, удостоверяющие личности заявителей(оригиналы для предьявления при личном сообщении)</li>-->
+<!--            <li>Договор купли-продажи (если договор совершен в простой письменной форме - оригинал не менее 2-х экземпляров; если договор нотариально удостоверен - не менее 2-х экземпляров, один из которых оригинал)</li>-->
+<!--            <li>Правоустанавливающий документ на обьект недвижимости (оригинал)</li>-->
+<!--            <li>Подпись</li>-->
+<!--            <li>По собственной инициативе - документы об уплате государственной пошлины (оригиналы и копии) в размере для физических лиц - 2 000 рублей, для юридических лиц - 22 000 рублей</li>-->
+<!--        </ul>-->
+<!--        {% for f in form.f6 %}-->
+<!--        <div class=""><label for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</div>-->
+<!--        <div class="form-error">{{ form.title.errors }}</div>-->
+<!--        {% endfor %}-->
+<!--        {% for f in form.f7 %}-->
+<!--        <div class="form-group form-area"><label for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</div>-->
+<!--        <div class="form-error">{{ form.title.errors }}</div>-->
+<!--        {% endfor %}-->
+<!--        <button type="submit">Отправить</button>>-->
+<!--    </div>-->
+<!--</form>-->

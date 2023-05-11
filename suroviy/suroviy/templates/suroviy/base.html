@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'suroviy/css/sty.css' %}">
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body>
+    <div class="grid">
+        <header>
+            <div class="block">
+                <h3><a href="{% url 'requests' %}">Ваши запросы</a></h3>
+            </div>
+            <div class="logoblock">
+                <a href="{% url 'homepage' %}"><img class="logo" src="{% static 'suroviy/images/logo.png'%}" width="188px" height="98px"></a>
+            </div>
+            <div class="login block">
+                <h3><a href="{% url 'sotrudnic' %}">Войти как сотрудник</a></h3>
+            </div>
+        </header>
+        <main>
+            <div></div>
+            <div class="form">
+                {% block content %}
+                {% endblock content %}
+            </div>
+            <div></div>
+        </main>
+        <footer>
+            <div class="feedback">
+                <h5><a href="">Правила и условия использования контента сайта</a></h5>
+                <h5> Связаться с нами: <a>pannikov6@gmail.com</a> </h5>
+            </div>
+            <div class="nomer">
+                <h5>Единый справочный телефон:</h5>
+                <h2>8 800 100 34 34</h2>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
